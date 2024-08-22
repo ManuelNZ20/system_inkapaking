@@ -1,1 +1,5 @@
-<?='Hola Mundo'?>
+
+
+<?=
+  'Hola Mundo desde el indice'
+?>
