@@ -1,0 +1,2 @@
+<!-- vista  -->
+ <?='Hola desde HOME'?>
