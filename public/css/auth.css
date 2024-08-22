@@ -1,0 +1,8 @@
+/* login */
+.img-card-login {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  background-size: contain;
+  margin: 0 auto;
+}
