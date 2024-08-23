@@ -15,7 +15,7 @@
         <div class="card-body">
         <h2>Iniciar sesión</h2>
         <p>¡Bienvenida al sistema de gestión de nuestro comedor!</p>
-      <form action="../../home/views/home.php" method="post">
+      <form action="" method="post">
           <div class="mb-3">
               <label for="email" class="form-label">Correo electrónico</label>
               <input type="email" class="form-control" id="email" name="email" placeholder="tu@email.com" required>

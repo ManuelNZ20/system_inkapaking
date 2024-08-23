@@ -20,6 +20,7 @@
 
 - HTML
 - CSS
+- jQuery
 
 #### Base de datos 💾🌐
 
@@ -28,3 +29,16 @@
 #### Patrón de arquitectura de software
 
 - MVC
+
+#### Servicios de terceros🤝
+
+- Heroku (Alojamiento de la aplicación Web)
+- CleverCloud (Alojamiento de la base de datos)
+
+#### Paquetes de composer
+
+- [vlucas/phpdotenv](https://github.com/vlucas/phpdotenv): Permite la carga de variable de entorno
+  - Instalación
+  ```
+    composer require vlucas/phpdotenv
+  ```
