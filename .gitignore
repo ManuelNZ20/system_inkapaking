@@ -1,5 +1,5 @@
 # base de datos
 database/
 .htaccess
-.env
+# .env
 vendor/
