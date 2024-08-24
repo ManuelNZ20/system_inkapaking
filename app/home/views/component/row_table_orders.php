@@ -12,7 +12,7 @@ foreach ($users as $index => $user) :
     $prefix = "user_{$user['id']}_";
 ?>
 <tr>
-    <td><?=$user['id']; ?></td>
+    <td><?=$index + 1 ?></td>
     <td><?=$user['fullname']; ?></td>
     <td><input type="checkbox" name="order-breakfast[<?=$user['id'];?>]" id="<?=$prefix;?>breakfast"> <label for="<?=$prefix;?>breakfast">Ordenar</label></td>
     <td><input type="checkbox" name="order-lunch[<?=$user['id'];?>]" id="<?=$prefix;?>lunch"> <label for="<?=$prefix;?>lunch">Ordenar</label></td>
