@@ -16,14 +16,20 @@
         <h2>Iniciar sesión</h2>
         <p>¡Bienvenida al sistema de gestión de nuestro comedor!</p>
       <form action="" method="post">
-          <div class="mb-3">
-              <label for="email" class="form-label">Correo electrónico</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="tu@email.com" required>
-          </div>
-          <div class="mb-3">
-              <label for="password" class="form-label">Contraseña</label>
-              <input type="password" class="form-control" id="password" name="password" required>
-          </div>
+      <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInputEmail" placeholder="tu@email.com" name="mail" required>
+            <label for="floatingInputEmail">Correo electrónico</label>
+        </div>
+        <div class="form-floating  position-relative mb-3">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" maxlength="8" required>
+            <label for="floatingPassword">Contraseña</label>
+            <!-- Botón para mostrar/ocultar contraseña -->
+            <div class="border-none input-group-append position-absolute" style="bottom:10px; right:10px;">
+              <span class="btn input-group-text" id="showPasswordToggleBtn">
+                <i class="bi bi-eye" id="showPasswordToggleIcon"></i>
+              </span>
+            </div>
+        </div>
           <div class="d-flex justify-content-between">
             <button type="submit" class="col-5 btn btn-dark">Iniciar sesión</button>
             <a href="/app/auth/views/register.php" class="btn btn-light col-5">Regístrate aquí</a>
@@ -33,5 +39,9 @@
       </div>
     </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="/public/js/scriptShowPassword.js">
+    // Función para mostrar u ocultar la contraseña
+  </script>
 </body>
 </html>
