@@ -1,5 +1,5 @@
 <?php
-include('blade/card.php');
+include('component/card.php');
 ?>
 <!DOCTYPE html>
 <html lang="es">
