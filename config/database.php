@@ -7,6 +7,7 @@ class ConnectionDataBase {
 
   public function __construct()
   {
+     echo HOST;
       $this->con = new PDO("mysql:host=".HOST.";dbname=".BASE.";port=".PORT, USER, PASS);
       if (!$this->con) {
           echo "Error en la conexión";
