@@ -7,7 +7,7 @@ class ConnectionDataBase {
 
   public function __construct()
   {
-      $this->con = new PDO("mysql:host=b6aqzoafsptlwn1dljif-mysql.services.clever-cloud.com;dbname=b6aqzoafsptlwn1dljif;port=3066", "uq7mskwqwg8xjqs4", "tVqq8uXhXNkBJRpgx3Ez");
+      $this->con = new PDO("mysql:host=".HOST.";dbname=".BASE.";port=".PORT, USER, PASS);
       if (!$this->con) {
           echo "Error en la conexión";
           exit;
