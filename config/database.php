@@ -12,7 +12,7 @@ class ConnectionDataBase {
     echo PASS;
     echo BASE;
     echo PORT;
-      $this->con = new PDO("mysql:host=".HOST.";dbname=".BASE.";port=".PORT, USER, PASS);
+      $this->con = new PDO("mysql:host=".HOST.";dbname=".BASE.";port=3306", USER, PASS);
       if (!$this->con) {
           echo "Error en la conexión";
           exit;
