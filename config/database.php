@@ -12,7 +12,7 @@ class ConnectionDataBase {
           echo "Error en la conexión";
           exit;
       } else {
-          echo "Conexión exitosa";
+        //   echo "Conexión exitosa";
           return;
       }
   }
