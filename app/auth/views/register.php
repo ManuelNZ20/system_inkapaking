@@ -25,11 +25,7 @@ $areas = $areaController->getAreas();
                 <h2>Registro de usuario</h2>
                 <p>¡Bienvenida al sistema de gestión de nuestro comedor!</p>
                 <!-- Mostrar mensaje de error si el correo ya existe -->
-                <?php if (isset($_GET['error']) && $_GET['error'] == 'email_exists'): ?>
-                    <div class="alert alert-danger" role="alert">
-                        El correo ya está en uso. Por favor, intenta con otro.
-                    </div>
-                <?php endif; ?>
+                <?php include('component/error_email_exists.php');?>
                 <form action="../controllers/UserController.php" method="post">
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control" id="floatingInputEmail" placeholder="tu@email.com" name="mail" required>

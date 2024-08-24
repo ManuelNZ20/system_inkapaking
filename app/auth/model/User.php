@@ -40,6 +40,8 @@ class UserModel {
         $this->sql = "INSERT INTO users (email, password, fullname) VALUES (:email, :password, :fullname)";
         $this->res = $this->con->prepare($this->sql);
         $this->res->bindParam(':email', $email);
+        // Encriptar la contraseña
+        $password = password_hash($password, PASSWORD_DEFAULT);
         $this->res->bindParam(':password', $password);
         $this->res->bindParam(':fullname', $fullname);
         // obtener id de usuario
@@ -58,6 +60,20 @@ class UserModel {
         $this->res->bindParam(':user_id', $user_id);
         $this->res->bindParam(':area_id', $area_id);
         return $this->res->execute();
+    }
+
+    public function authenticateUser($email,$password) {
+         // Verifica si el usuario existe y la contraseña es correcta
+        $this->sql = "SELECT * FROM users WHERE email = :email LIMIT 1";
+        $this->res = $this->con->prepare($this->sql);
+        $this->res->bindParam(':email', $email);
+        $this->res->execute();
+        $user = $this->res->fetch(PDO::FETCH_ASSOC);
+        // Verifica la contraseña
+        if ($user && password_verify($password, $user['password'])) {
+            return $user;
+        }
+        return false;
     }
 }
 ?>
