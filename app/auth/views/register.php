@@ -55,7 +55,7 @@ $areas = $areaController->getAreas();
                     </div>
                     <div class="d-flex justify-content-between">
                         <button type="submit" class="col-5 btn btn-dark">Registrarse</button>
-                        <a href="/app/auth/views/login.php" class="btn btn-light col-5">Iniciar sesión</a>
+                        <a href="../../../" class="btn btn-light col-5">Iniciar sesión</a>
                     </div>
                 </form>
             </div>

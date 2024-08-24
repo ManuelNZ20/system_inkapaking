@@ -21,7 +21,7 @@ include('component/loading_screen.php');
         <p>¡Bienvenida al sistema de gestión de nuestro comedor!</p>
          <!-- Mostrar mensaje de error si las credenciales son inválidas -->
       <?php include('component/error_credential.php');?>
-      <form action="../controllers/LoginController.php" method="post">
+      <form action="app/auth/controllers/LoginController.php" method="post">
       <div class="form-floating mb-3">
             <input type="email" class="form-control" id="floatingInputEmail" placeholder="tu@email.com" name="mail" required>
             <label for="floatingInputEmail">Correo electrónico</label>

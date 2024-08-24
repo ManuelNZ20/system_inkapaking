@@ -37,6 +37,7 @@ class UserModel {
             header("Location: ../views/register.php?error=email_exists");
             exit;
         }
+        
         $this->sql = "INSERT INTO users (email, password, fullname) VALUES (:email, :password, :fullname)";
         $this->res = $this->con->prepare($this->sql);
         $this->res->bindParam(':email', $email);
@@ -71,7 +72,7 @@ class UserModel {
         $user = $this->res->fetch(PDO::FETCH_ASSOC);
         // Verifica la contraseña
         if ($user && password_verify($password, $user['password'])) {
-            return $user;
+            return true;
         }
         return false;
     }

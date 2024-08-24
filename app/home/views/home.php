@@ -14,9 +14,9 @@ include('component/card.php');
 <body>
 <div class="container p-2">
   <div class="border-none input-group-append">
-    <span class="btn input-group-text" id="">
+    <a href="<?='../../app/auth/views/logout.php'?>" class="btn btn-outline-danger me-2 nav-item">
       <i class="bi bi-box-arrow-left"></i>
-    </span> 
+    </a>
   </div>
   <div class="row">
   <?php
