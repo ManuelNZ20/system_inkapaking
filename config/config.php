@@ -6,7 +6,7 @@ $dotenv->load();
 
 
 // En Producción
-$bandera = false; // falso para desarrollo y verdadero para producción
+$bandera = true; // falso para desarrollo y verdadero para producción
 
 if($bandera===true){
     define('DRIVER', $_ENV['P_DRIVER']);
