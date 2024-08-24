@@ -34,6 +34,7 @@
 
 - Heroku (Alojamiento de la aplicación Web)
 - CleverCloud (Alojamiento de la base de datos)
+- Git & GitHub (Controlador de versiones y alojamiento de proyecto)
 
 #### Paquetes de composer
 

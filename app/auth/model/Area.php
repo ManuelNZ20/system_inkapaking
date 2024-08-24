@@ -23,5 +23,14 @@ class AreaModel {
         $this->res->execute();
         return $this->res->fetchAll(PDO::FETCH_ASSOC);
     }
+    //   obtener id de area por id de usuario
+    public function getAreaIdByUser($user_id) {
+        $this->sql = "SELECT area_id FROM user_area WHERE user_id = :user_id";
+        $this->res = $this->con->prepare($this->sql);
+        $this->res->bindParam(':user_id', $user_id);
+        $this->res->execute();
+        $area = $this->res->fetch(PDO::FETCH_ASSOC);
+        return $area;
+    }
 }
 ?>

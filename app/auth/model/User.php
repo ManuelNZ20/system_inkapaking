@@ -52,7 +52,7 @@ class UserModel {
         // agregar usuario a un área
         $this->addUserArea($user_id,$area_id);
         
-        return true;
+        return $user_id;
     }
 
     public function addUserArea($user_id,$area_id) {
@@ -62,7 +62,7 @@ class UserModel {
         $this->res->bindParam(':area_id', $area_id);
         return $this->res->execute();
     }
-
+    // LoginController
     public function authenticateUser($email,$password) {
          // Verifica si el usuario existe y la contraseña es correcta
         $this->sql = "SELECT * FROM users WHERE email = :email LIMIT 1";
@@ -72,7 +72,7 @@ class UserModel {
         $user = $this->res->fetch(PDO::FETCH_ASSOC);
         // Verifica la contraseña
         if ($user && password_verify($password, $user['password'])) {
-            return true;
+            return $user;
         }
         return false;
     }
