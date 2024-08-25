@@ -16,10 +16,6 @@ class UserModel {
         $this->con = $this->con->getConnection();
     }
 
-    public function getUsers()
-    {
-    }
-
     public function emailExists($email) {
         $this->sql = "SELECT COUNT(*) FROM users WHERE email = :email";
         $this->res = $this->con->prepare($this->sql);
@@ -76,5 +72,7 @@ class UserModel {
         }
         return false;
     }
+    
+
 }
 ?>

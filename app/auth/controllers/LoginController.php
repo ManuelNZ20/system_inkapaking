@@ -29,12 +29,6 @@ if ($result) {
   $_SESSION['user_id'] = $user['id'];
   $_SESSION['user_fullname'] = $user['fullname'];
   $_SESSION['user_email'] = $user['email'];
-
-  // Crear una orden para el usuario
-  $date = date('Y-m-d');
-  $area_id = $areaController->getAreaIdByUser($user['id']);
-  $orderDateId =  $orderDateController->createOrderDate($date, $area_id['area_id']);
-  $_SESSION['order_date_id'] = $orderDateId;
   // Redirigir al dashboard u otra página
   header("Location: ../../home/home.php");
   exit;

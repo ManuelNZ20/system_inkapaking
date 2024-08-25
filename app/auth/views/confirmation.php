@@ -12,7 +12,7 @@
         <h4 class="alert-heading">¡Registro exitoso!</h4>
         <p>Tu cuenta ha sido creada con éxito. Ahora puedes iniciar sesión.</p>
         <hr>
-        <a href="/app/auth/views/login.php" class="btn btn-dark">Iniciar sesión</a>
+        <a href="../../../" class="btn btn-dark">Iniciar sesión</a>
     </div>
 </div>
 </body>

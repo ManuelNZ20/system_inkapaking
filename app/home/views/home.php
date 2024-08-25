@@ -9,7 +9,6 @@ if (!isset($_SESSION['user_id'])) {// si no existe la sesión redirigir al login
 $user_id = $_SESSION['user_id'];
 $user_fullname = $_SESSION['user_fullname'];
 $user_email = $_SESSION['user_email'];
-$order_date_id = $_SESSION['order_date_id'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
