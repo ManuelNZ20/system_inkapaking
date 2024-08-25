@@ -24,14 +24,11 @@ $user_email = $_SESSION['user_email'];
 </head>
 <body>
   <!-- header -->
-<?php include('component/header_area.php');?>
-<!-- table -->
-<?php include('component/row_table_orders.php');?>
-
-
-<!-- Pantalla de carga -->
-<?=loadingScreen()?>
-
+  <?php include('component/header_area.php');?>
+  <!-- table -->
+  <?php include('component/row_table_orders.php');?>
+  <!-- Pantalla de carga -->
+  <?=loadingScreen()?>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="/public/js/viewLoadingScreen.js"></script>
 <script src="/public/js/navigatorView.js"></script>

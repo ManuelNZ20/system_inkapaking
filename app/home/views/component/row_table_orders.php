@@ -25,14 +25,16 @@ $order_list_date = $order_date_controller->listOrderDate($area_id);
     <?php endif; ?>
   <!-- Combo box para listar las fechas de las ordenes -->
   <div class="row mt-2 mb-2">
-    <div class="col-md-2">
+    <div class="col-md-3">
       <!-- <label for="order-date">Ordenes:</label> -->
-      <select class="form-select" id="order-date">
-        <option value="-1">Seleccionar</option>
-        <?php foreach ($order_list_date as $order_date) : ?>
+       <!-- <form action="" method="GET">
+         </form> -->
+         <select class="form-select" id="order-date" name="order_date_id">
+           <option value="-1">Seleccionar</option>
+           <?php foreach ($order_list_date as $order_date) : ?>
             <option value="<?=$order_date['id'];?>"><?=$order_date['date_order'];?></option>
-        <?php endforeach; ?>
-      </select>
+            <?php endforeach; ?>
+          </select>
     </div>
   </div>
     <?php $order_date_id = $order_date_controller->getOrderDate($date,$area_id);?>
@@ -64,7 +66,7 @@ $order_list_date = $order_date_controller->listOrderDate($area_id);
             <tr>
                 <td><?=$index + 1 ?></td>
                 <td><?=$user['fullname']; ?></td>
-                <?php
+                <?php   
                     $breakfast = $user['breakfast'] == 1 ? 'checked' : '';
                     $lunch = $user['lunch'] == 1 ? 'checked' : '';
                     $dinner = $user['dinner'] == 1 ? 'checked' : '';
