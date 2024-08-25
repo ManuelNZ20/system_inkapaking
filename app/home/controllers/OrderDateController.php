@@ -22,5 +22,16 @@ class OrderDateController
         return $order_date;
     }
 
+    public function getOrderDate($date,$area_id)
+    {
+        $order_date = $this->model->getOrderDate($date,$area_id);
+        return $order_date;
+    }
+
+    public function listOrderDate($area_id)
+    {
+        $order_date = $this->model->listOrderDate($area_id);
+        return $order_date;
+    }
 }
 ?>

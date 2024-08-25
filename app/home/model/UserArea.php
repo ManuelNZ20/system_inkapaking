@@ -25,5 +25,17 @@ class UserAreaModel {
         $users = $this->res->fetchAll(PDO::FETCH_ASSOC);
         return $users;
     }
+    // Obtener el id del area a la que pertenece un usuario por su id, haciendo la consulta a las tablas users.y user_area,
+    public function getAreaIdByUserId($user_id) {
+        $this->sql = "SELECT area_id FROM user_area WHERE user_id = :user_id";
+        $this->res = $this->con->prepare($this->sql);
+        $this->res->bindParam(':user_id', $user_id);
+        $this->res->execute();
+        $area_id = $this->res->fetchColumn();
+        return $area_id;
+    }
+    // obtener la lista de usuarios de la tabla user_area por
+
+
 }
 ?>

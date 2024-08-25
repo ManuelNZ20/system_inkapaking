@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL); // Error/Exception engine, always use E_ALL permite mostrar todos los errores
 ini_set('display_errors', 1); // Error/Exception display, use ini_set to override permite mostrar todos los errores
-session_start();
+// session_start();
 date_default_timezone_set('America/Lima');
 require_once(__DIR__.'/../../../config/database.php');
 
@@ -56,7 +56,26 @@ class OrderDateModel {
     $order_date = $this->res->fetch(PDO::FETCH_ASSOC);
     return $order_date;
   }
-  
+
+  // Obtener la orden por la fecha y el area
+  public function getOrderDate($date,$area_id) {
+    $this->sql = "SELECT id FROM order_date WHERE date_order = :date AND area_id = :area_id";
+    $this->res = $this->con->prepare($this->sql);
+    $this->res->bindParam(':date', $date);
+    $this->res->bindParam(':area_id', $area_id);
+    $this->res->execute();
+    $order_date = $this->res->fetch(PDO::FETCH_ASSOC);
+    return $order_date['id'];
+  }
+  // Listar las fechas existentes en la base de datos por el id de area
+  public function listOrderDate($area_id) {
+    $this->sql = "SELECT * FROM order_date WHERE area_id = :area_id";
+    $this->res = $this->con->prepare($this->sql);
+    $this->res->bindParam(':area_id', $area_id);
+    $this->res->execute();
+    $order_date = $this->res->fetchAll(PDO::FETCH_ASSOC);
+    return $order_date;
+  }
   // cerrar conexion cuando se destruya el objeto
   public function __destruct()
   {
