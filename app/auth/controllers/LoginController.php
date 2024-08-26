@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('../model/User.php');
+require_once('../model/DailyOrdersIfNeeded.php');
 require_once('OrderDateController.php');
 require_once('AreaController.php');
 
@@ -16,6 +17,11 @@ class LoginController {
       }
       return false;
   }
+
+  public function executeDailyOrdersIfNeeded() {
+    $dailyOrdersIfNeeded = new DailyOrdersIfNeeded();
+    $dailyOrdersIfNeeded->executeDailyOrdersIfNeeded();
+  }
 }
 $orderDateController = new OrderDateController();
 $areaController = new AreaController();
@@ -25,6 +31,8 @@ $result = $controller->authenticateUserLogin();
 $user = $result;
 
 if ($result) {
+  // Ejecutar el procedimiento si es necesario
+  $controller->executeDailyOrdersIfNeeded();
   // Si la autenticación es exitosa, iniciar sesión
   $_SESSION['user_id'] = $user['id'];
   $_SESSION['user_fullname'] = $user['fullname'];
