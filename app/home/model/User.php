@@ -53,6 +53,10 @@ class UserModel {
     $total = $this->res->fetch(PDO::FETCH_ASSOC);
     return $total;
   }
-  
+  // Limpiar la conexión
+  public function __destruct()
+  {
+      $this->con = null;
+  }
 }
 ?>

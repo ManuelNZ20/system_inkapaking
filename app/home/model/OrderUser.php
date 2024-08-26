@@ -76,5 +76,10 @@ class OrderUserModel {
     $this->res->execute();
     return true;
   }
+  // Limpiar la conexión
+  public function __destruct()
+  {
+      $this->con = null;
+  }
 }
 ?>

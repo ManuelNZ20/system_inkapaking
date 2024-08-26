@@ -39,5 +39,11 @@ class AreaModel {
         $this->res->execute();
         return $this->res->fetchAll(PDO::FETCH_ASSOC);
     }
+    // Limpiar la conexión
+    public function __destruct()
+    {
+        $this->con = null;
+    }
+    
 }
 ?>

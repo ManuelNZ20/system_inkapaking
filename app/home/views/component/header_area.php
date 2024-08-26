@@ -1,14 +1,21 @@
 <?php
 require_once(__DIR__.'/../../controllers/AreaController.php');
+require_once(__DIR__.'/../../controllers/OrderDateController.php');
 $areaController = new AreaController();
+$orderDateController = new OrderDateController();
 $user_id = $_SESSION['user_id'];
 $area = $areaController->getAreaByUser($user_id);
 
 $user_id = $_SESSION['user_id'];
 $user_fullname = $_SESSION['user_fullname'];
 $user_email = $_SESSION['user_email'];
-
-$order_date_id = $_GET['order_date_id'];
+// determinar si order_date_id esta definido
+if (isset($_GET['order_date_id'])) {
+  $order_date_id = $_GET['order_date_id'];
+} else {
+  $date = date('Y-m-d');
+  $order_date_id = $orderDateController->getOrderDate($date, $area['id']);
+}
 ?>
 <!-- Header para mi pagina que me permita mostrar el nombre de area a la que pertenece un usuario -->
 <header class="mt-4 container">

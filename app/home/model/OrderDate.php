@@ -65,6 +65,7 @@ class OrderDateModel {
     $this->res->bindParam(':area_id', $area_id);
     $this->res->execute();
     $order_date = $this->res->fetch(PDO::FETCH_ASSOC);
+    
     return $order_date['id'];
   }
   // Listar las fechas existentes en la base de datos por el id de area

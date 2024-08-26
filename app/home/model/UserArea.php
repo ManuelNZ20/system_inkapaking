@@ -34,8 +34,11 @@ class UserAreaModel {
         $area_id = $this->res->fetchColumn();
         return $area_id;
     }
-    // obtener la lista de usuarios de la tabla user_area por
-
+    // Limpiar la conexión
+    public function __destruct()
+    {
+        $this->con = null;
+    }
 
 }
 ?>

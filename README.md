@@ -43,3 +43,14 @@
   ```
     composer require vlucas/phpdotenv
   ```
+
+### PASOS PARA INICIAR CONEXIÓN CON HEROKU
+
+```
+heroku login
+```
+
+- Iniciar servicio en el sistema
+  ```
+  heroku config --app <system-name>
+  ```

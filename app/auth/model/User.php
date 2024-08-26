@@ -72,7 +72,11 @@ class UserModel {
         }
         return false;
     }
-    
+    // Limpiar la conexión
+    public function __destruct()
+    {
+        $this->con = null;
+    }
 
 }
 ?>

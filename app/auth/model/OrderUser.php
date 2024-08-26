@@ -60,6 +60,11 @@ class OrderUserModel {
     $this->res->bindParam(':order_id', $order_id);
     return $this->res->execute();
   }
+  // Limpiar la conexión
+  public function __destruct()
+  {
+      $this->con = null;
+  }
 }
 
 ?>

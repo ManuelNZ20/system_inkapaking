@@ -23,6 +23,8 @@ class UserAreaModel {
         $this->res->bindParam(':area_id', $area_id);
         $this->res->execute();
         $users = $this->res->fetchAll(PDO::FETCH_ASSOC);
+        // Liberar la conexión
+        $this->res = null;
         return $users;
     }
     // Obtener el id del area a la que pertenece un usuario por su id, haciendo la consulta a las tablas users.y user_area,
@@ -33,6 +35,11 @@ class UserAreaModel {
         $this->res->execute();
         $area_id = $this->res->fetchColumn();
         return $area_id;
+    }
+    // Limpiar la conexión
+    public function __destruct()
+    {
+        $this->con = null;
     }
 }
 ?>
