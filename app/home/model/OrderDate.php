@@ -59,14 +59,16 @@ class OrderDateModel {
 
   // Obtener la orden por la fecha y el area
   public function getOrderDate($date,$area_id) {
-    $this->sql = "SELECT id FROM order_date WHERE date_order = :date AND area_id = :area_id";
+    $this->sql = "SELECT * FROM order_date WHERE date_order = :date AND area_id = :area_id";
     $this->res = $this->con->prepare($this->sql);
     $this->res->bindParam(':date', $date);
     $this->res->bindParam(':area_id', $area_id);
     $this->res->execute();
     $order_date = $this->res->fetch(PDO::FETCH_ASSOC);
-    
-    return $order_date['id'];
+    if($order_date!==false) {
+      return $order_date['id'];
+    }
+    return null;
   }
   // Listar las fechas existentes en la base de datos por el id de area
   public function listOrderDate($area_id) {
