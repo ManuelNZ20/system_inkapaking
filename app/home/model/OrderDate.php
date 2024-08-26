@@ -76,6 +76,16 @@ class OrderDateModel {
     $order_date = $this->res->fetchAll(PDO::FETCH_ASSOC);
     return $order_date;
   }
+
+  public function getOrderDateById($order_date_id) {
+    $this->sql = "SELECT * FROM order_date WHERE id = :order_date_id";
+    $this->res = $this->con->prepare($this->sql);
+    $this->res->bindParam(':order_date_id', $order_date_id);
+    $this->res->execute();
+    $order_date = $this->res->fetch(PDO::FETCH_ASSOC);
+    return $order_date;
+  }
+
   // cerrar conexion cuando se destruya el objeto
   public function __destruct()
   {

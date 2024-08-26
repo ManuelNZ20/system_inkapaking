@@ -31,5 +31,13 @@ class AreaModel {
           $this->res->execute();
           return $this->res->fetch(PDO::FETCH_ASSOC);
       }
+    //obtener todas las areas
+    public function getAllAreas()
+    {
+        $this->sql = "SELECT * FROM areas";
+        $this->res = $this->con->prepare($this->sql);
+        $this->res->execute();
+        return $this->res->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 ?>

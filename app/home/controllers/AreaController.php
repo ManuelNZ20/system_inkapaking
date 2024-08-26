@@ -21,5 +21,10 @@ class AreaController
         $area = $this->model->getAreaByUser($user_id);
         return $area;
     }
+    public function getAllAreas()
+    {
+        $areas = $this->model->getAllAreas();
+        return $areas;
+    }
 }
 ?>

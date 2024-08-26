@@ -16,16 +16,16 @@ if ($order_date_id === null) {
   header('Location: ../../home/home.php?status=error');
   exit;
 }
-// echo "<br>";
+// DETERMINAR SI SE ESTAN ACTUALIZANDO LOS DATOS DEL DÍA DE HOY
+// SI CUMPLE CON LA CONDICIÓN SE ACTUALIZA
+// SI NO SE REDIRIGE A LA PÁGINA DE INICIO
+// fecha actual
+
 foreach ($users as $user_id) {
   // Obtener el estado de cada tipo de comida
   $breakfast = isset($_POST['order-breakfast'][$user_id]) ? 1 : 0;
   $lunch = isset($_POST['order-lunch'][$user_id]) ? 1 : 0;
   $dinner = isset($_POST['order-dinner'][$user_id]) ? 1 : 0;
-  // echo $user_id;
-  // echo $breakfast;
-  // echo $lunch;
-  // echo $dinner;
   // Actualizar el registro
   $verify = $order_user_controller->updateOrderUser($user_id, $order_date_id, $breakfast, $lunch, $dinner);
   echo $verify? "Actualizado" : "No actualizado";
@@ -35,5 +35,6 @@ foreach ($users as $user_id) {
 // Redirigir o mostrar un mensaje de éxito
 header('Location: ../../home/home.php?status=success');
 exit;
+
 
 ?>

@@ -7,9 +7,6 @@ if (!isset($_SESSION['user_id'])) {// si no existe la sesión redirigir al login
   header('Location: ../../../');
   exit;
 }
-$user_id = $_SESSION['user_id'];
-$user_fullname = $_SESSION['user_fullname'];
-$user_email = $_SESSION['user_email'];
 ?>
 <!DOCTYPE html>
 <html lang="es">

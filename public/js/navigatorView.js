@@ -9,7 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.querySelectorAll("a").forEach(function (link) {
-  link.addEventListener("click", function () {
-    document.getElementById("loadingScreen").style.display = "flex";
-  });
+  link.addEventListener(
+    "click",
+    function () {
+      document.getElementById("loadingScreen").style.display = "flex";
+    },
+    false
+  );
 });
